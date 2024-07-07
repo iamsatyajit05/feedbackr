@@ -27,7 +27,7 @@ const navItems: MenuLink[] = [
 
 export default function Header() {
     return (
-        <header className='max-w-7xl m-auto flex w-full items-center justify-between px-4 py-4 md:px-16'>
+        <header className='max-w-6xl m-auto flex w-full items-center justify-between p-4'>
             <Link href='/' className="text-2xl font-gabarito font-extrabold">
                 FEEDBACK<span className="font-normal">R</span>
             </Link>

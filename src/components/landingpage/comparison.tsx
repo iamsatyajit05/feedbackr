@@ -18,7 +18,7 @@ const withFeedbackr = [
 
 export default function Comparison() {
     return (
-        <div className="max-w-5xl mx-auto px-8 py-16 md:py-32">
+        <section className="max-w-5xl mx-auto px-8 py-16 md:py-32">
             <h2 className="text-center font-extrabold text-4xl md:text-5xl tracking-tight mb-12 md:mb-20">
                 Struggling to Gather User <br className="hidden sm:block" /> Feedback for Your Product?
             </h2>
@@ -52,6 +52,6 @@ export default function Comparison() {
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

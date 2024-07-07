@@ -4,9 +4,8 @@ export default function Demo() {
             <h2 className="text-center font-extrabold mb-6 md:mb-8 text-3xl md:text-5xl">
                 Simple Setup Walkthrough
             </h2>
-            <div className="relative max-w-4xl mx-auto">
-                <div className="md:border-2 md:p-2 md:rounded-2xl bg-base-200 border-primary/10">
-                    <div className="relative w-full aspect-video overflow-hidden sm:rounded-xl  ">
+                <div className="md:border-2 md:p-2 md:rounded-2xl bg-base-200 border-primary/10 max-w-4xl mx-auto">
+                    <div className="relative w-full aspect-video overflow-hidden rounded-lg sm:rounded-xl">
                         <iframe
                             className="absolute inset-0 w-full h-full"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -16,7 +15,6 @@ export default function Demo() {
                         ></iframe>
                     </div>
                 </div>
-            </div>
         </section>
     )
 }

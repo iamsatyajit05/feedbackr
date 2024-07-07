@@ -37,7 +37,7 @@ export default function Pricing() {
                     </ul>
                     <div className="space-y-2">
                         <Button size={'lg'} className="w-full" asChild>
-                            <Link href='#pricing'>Get Feedbackr</Link>
+                            <Link href='/login'>Get Feedbackr</Link>
                         </Button>
                         <p className=" text-sm text-center text-base-content-secondary font-medium">
                             No credit card required.
