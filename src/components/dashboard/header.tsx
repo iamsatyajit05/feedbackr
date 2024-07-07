@@ -20,12 +20,14 @@ export default async function Header() {
   return (
     <header className="flex items-center justify-between p-4">
       <div className="flex items-center gap-5">
-        <p className="text-2xl font-bold">FEEDBACK<span className="font-normal">R</span></p>
+        <Link href='/' className="text-2xl font-gabarito font-extrabold">
+          FEEDBACK<span className="font-normal">R</span>
+        </Link>
         <ComboboxDemo />
       </div>
 
       <nav className="flex gap-5 items-center">
-        <Link href={'/examples'}>Examples</Link>
+        <Link href='/examples'>Examples</Link>
         <Feedbackr projectId="gqgpi9se7z" userId={user[0].email}>
           <p>Give a feedback</p>
         </Feedbackr>
@@ -49,7 +51,7 @@ export default async function Header() {
             <DropdownMenuLabel>Hello {user[0].name?.split(' ')[0]}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <form action={signOut}>
-              <Button type="submit" variant={'link'} className="w-full justify-start p-2 text-black">Sign out</Button>
+              <Button type="submit" variant={'link'} className="w-full justify-start p-2 text-black">Log out</Button>
             </form>
           </DropdownMenuContent>
         </DropdownMenu>

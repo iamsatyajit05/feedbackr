@@ -115,8 +115,8 @@ const FeedbackComponent: React.FC<FeedbackComponentProps> = ({ children, project
 
             <Dialog isOpen={isOpen} onClose={handleClose}>
                 <div className="p-6">
-                    <h2 className="text-lg font-semibold mb-2">Give us your feedback</h2>
-                    <p className="text-sm text-gray-600 mb-4">We'd love to hear your thoughts on how we can improve.</p>
+                    <h2 className="text-lg font-semibold mb-2 text-left">Give us your feedback</h2>
+                    <p className="text-sm text-gray-600 mb-4 text-left">We'd love to hear your thoughts on how we can improve.</p>
                     <form onSubmit={handleSubmit} className="space-y-2">
                         <div className='accent-black flex justify-between gap-2'>
                             {['issue', 'suggestion', 'other'].map((category) => (

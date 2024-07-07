@@ -10,7 +10,7 @@ export default async function DashboardLayout({
     const { user } = await validateRequest()
 
     if (!user) {
-        return redirect("/login")
+        return redirect("/")
     }
 
     return (

@@ -18,3 +18,8 @@ export interface ValidationError {
   projectId?: string;
   category?: string;
 }
+
+export interface MenuLink {
+  title: string;
+  link: string;
+}

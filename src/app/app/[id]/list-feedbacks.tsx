@@ -58,15 +58,15 @@ export default function ListFeedbacks({ feedbacks }: any) {
               <div key={f.id} className="group flex flex-col gap-2 p-4 border border-gray-200 rounded-md w-full relative">
                 <Badge variant="outline" className="w-fit">{f.category}</Badge>
                 <p className="font-semibold">{f.content}</p>
-                <p className="text-sm font-light text-gray-500">
+                <p className="font-light text-gray-500">
                   <span className="font-normal">Submitted At: </span>
                   {format(f.createdAt, 'PP')}
                 </p>
-                <p className="text-sm font-light text-gray-500 break-words">
+                <p className="font-light text-gray-500 break-words">
                   <span className="font-normal">Source: </span>
                   {f.origin}
                 </p>
-                <p className="text-sm font-light text-gray-500">
+                <p className="font-light text-gray-500">
                   <span className="font-normal">User: </span>
                   {f.userId}
                 </p>

@@ -58,6 +58,10 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        gabarito: ['var(--font-gabarito)'],
+        inter: ['var(--font-inter)'],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

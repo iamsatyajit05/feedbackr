@@ -13,5 +13,5 @@ export default function LoginButton() {
     }
   }
 
-  return <Button onClick={handleGoogelLogin}>Sign in with Google</Button>;
+  return <Button onClick={handleGoogelLogin}>Login</Button>;
 }

@@ -166,7 +166,7 @@ export async function GET(req: NextRequest) {
       await createProject('Blue Ocean');
     }
 
-    return NextResponse.redirect(new URL('/', process.env.NEXT_PUBLIC_BASE_URL), {
+    return NextResponse.redirect(new URL('/app', process.env.NEXT_PUBLIC_BASE_URL), {
       status: 302,
     });
   } catch (error: any) {
