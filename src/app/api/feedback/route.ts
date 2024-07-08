@@ -27,11 +27,14 @@ export async function POST(req: NextRequest) {
     const { success } = await createFeedback({ content, projectId, category, userId, origin: originUrl });
 
     if (success) {
-      return NextResponse.json({ success: true, message: 'Feedback saved successfully' }, { status: 201 });
+      return NextResponse.json(
+        { success: true, message: 'Feedback saved successfully' },
+        { status: 201, headers: { 'Access-Control-Allow-Origin': '*' } },
+      );
     } else {
-        throw new Error('Failed to save feedback');
+      throw new Error('Failed to save feedback');
     }
-  } catch (error: any) {    
+  } catch (error: any) {
     return NextResponse.json({ success: false, error: error?.message || 'Something went wrong' }, { status: 400 });
   }
 }

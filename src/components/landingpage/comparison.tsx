@@ -1,7 +1,7 @@
 import { CheckIcon, XIcon } from "lucide-react";
 
 const withoutFeedbackr = [
-    'Relying on bording email or social media',
+    'Relying on boring email or social media',
     'Limited options to customize feedback forms',
     'Often tied to expensive monthly subscriptions',
     'Lack of organized feedback data',

@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from 'clsx';
+import toast from 'react-hot-toast';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -22,4 +23,9 @@ export function generateRandomId() {
   id += timestampPart;
 
   return id;
+}
+
+export function copyToClipboard(text: string) {
+  navigator.clipboard.writeText(text);
+  toast.success('Copied to clipboard');
 }
