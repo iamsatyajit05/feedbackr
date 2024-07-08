@@ -20,7 +20,7 @@ const faq = [
     },
     {
         question: "Will I receive email notifications for new feedback submissions?",
-        answer: "Soon, currently it's in development phase."
+        answer: "Yes."
     },
     {
         question: "Can I customize the feedback widget's appearance?",
@@ -32,7 +32,7 @@ const faq = [
     },
     {
         question: "How do I upgrade to the Pro Plan for unlimited projects and feedbacks?",
-        answer: "You can upgrade to the Pro Plan directly from your account dashboard. It offers unlimited projects and feedback submissions."
+        answer: "You can upgrade to the Pro Plan from pricing section."
     },
     {
         question: "Can I use Feedbackr for multiple projects under the Free Forever Plan?",

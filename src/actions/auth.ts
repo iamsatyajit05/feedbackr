@@ -1,7 +1,7 @@
 'use server';
 import { google } from '@/lib/auth';
 import db from '@/lib/db';
-import { userTable } from '@/lib/db/schema';
+import { orderTable, userTable } from '@/lib/db/schema';
 import { lucia, validateRequest } from '@/lib/lucia';
 import { generateCodeVerifier, generateState } from 'arctic';
 import { eq } from 'drizzle-orm';
@@ -17,11 +17,27 @@ export async function getUser() {
       };
     }
 
-    const user = await db.select().from(userTable).where(eq(userTable.id, valid.user.id));
+    const user = await db.select().from(userTable).where(eq(userTable.id, valid.user.id)).execute();
+
+    if (user.length === 0) {
+      return {
+        error: 'User not found',
+      };
+    }
+
+    const payments = await db
+      .select()
+      .from(orderTable)
+      .where(eq(orderTable.userEmail, user[0].email!))
+      .execute();
+    const isPro = payments.length > 0;
 
     return {
       success: true,
-      data: user,
+      data: {
+        ...user[0],
+        plan: isPro ? 'pro' : 'free',
+      },
     };
   } catch (error: any) {
     return {

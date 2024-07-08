@@ -1,11 +1,11 @@
 'use server';
 import db from '@/lib/db';
-import { projectTable } from '@/lib/db/schema';
+import { projectTable, userTable } from '@/lib/db/schema';
 import { validateRequest } from '@/lib/lucia';
 import { eq } from 'drizzle-orm';
 import { Project } from '@/lib/interface';
 import { generateRandomId } from '@/lib/utils';
-import { notFound } from 'next/navigation';
+import { getUser } from './auth';
 
 export async function createProject(projectName: string) {
   try {
@@ -18,6 +18,12 @@ export async function createProject(projectName: string) {
       };
     }
 
+    const userData = await getUser();
+
+    if (userData.data && userData.data?.plan === 'free') {
+      throw new Error('Upgrade to pro to create more projects');
+    }
+
     await db.insert(projectTable).values({
       id: generateRandomId(),
       userId: user.id,
@@ -28,10 +34,7 @@ export async function createProject(projectName: string) {
       success: true,
     };
   } catch (error: any) {
-    return {
-      success: false,
-      error: error?.message,
-    };
+    throw new Error(error.message);
   }
 }
 
@@ -84,5 +87,19 @@ export async function getProjects(): Promise<{ success: boolean; data: Project[]
       data: [],
       error: error?.message,
     };
+  }
+}
+
+export async function getProjectOwnerEmail(
+  projectId: string,
+): Promise<{ ownerEmail: string; projectName: string } | null> {
+  try {
+    const project = await db.select().from(projectTable).where(eq(projectTable.id, projectId)).execute();
+    const user = await db.select().from(userTable).where(eq(userTable.id, project[0]?.userId)).execute();
+
+    return { ownerEmail: user[0]?.email!, projectName: project[0]?.name };
+  } catch (error) {
+    console.error('Error fetching project owner email:', error);
+    return null;
   }
 }

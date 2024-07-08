@@ -46,12 +46,12 @@ export default function Pricing() {
                 </div>
                 <div className="relative w-full max-w-sm">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-nowrap">
-                        <Badge variant={'secondary'}>Launch discount — 50% OFF</Badge>
+                        <Badge variant={'secondary'}>Speical discount for first 10 ppl — $40 OFF</Badge>
                     </div>
                     <div className="flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg border">
                         <div className="flex flex-wrap gap-2">
                             <p className="flex flex-col justify-end mb-[4px] text-lg line-through text-slate-800">
-                                $19
+                                $49
                             </p>
                             <p className="text-4xl tracking-tight font-extrabold">$9</p>
                         </div>
@@ -71,9 +71,9 @@ export default function Pricing() {
                         </ul>
                         <div className="space-y-2">
                             <Button size={'lg'} className="w-full" asChild>
-                                <Link href='#pricing'>Get Feedbackr</Link>
+                                <Link href={process.env.PRO_PLAN_URL!}>Get Feedbackr</Link>
                             </Button>
-                            <p className=" text-sm text-center text-base-content-secondary font-medium">
+                            <p className="text-sm text-center text-base-content-secondary font-medium">
                                 Pay once. Use forever.
                             </p>
                         </div>

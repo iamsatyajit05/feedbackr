@@ -25,12 +25,18 @@ export function CreateNewProject() {
             toast.promise(saveProject, {
                 loading: 'Creating Project...',
                 success: 'Project created successfully! 🎉',
-                error: 'Failed to create project 😢',
+                error: (err) => `${err.toString()}`,
             });
-            const res = await saveProject;
-            if (res.success) {
-                window.location.reload();
-            }
+
+            saveProject
+                .then((res) => {
+                    if (res.success) {
+                        window.location.reload();
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
         }
     };
 

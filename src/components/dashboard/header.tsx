@@ -28,7 +28,7 @@ export default async function Header() {
 
       <nav className="flex gap-5 items-center">
         <Link href='/examples'>Examples</Link>
-        <Feedbackr projectId="gqgpi9se7z" userId={user[0].email}>
+        <Feedbackr projectId="gqgpi9se7z" userId={user.email}>
           <p>Give a feedback</p>
         </Feedbackr>
         <DropdownMenu>
@@ -39,7 +39,7 @@ export default async function Header() {
               className="overflow-hidden rounded-full"
             >
               <Image
-                src={user[0].profilePictureUrl}
+                src={user.profilePictureUrl}
                 width={36}
                 height={36}
                 alt="Avatar"
@@ -48,7 +48,14 @@ export default async function Header() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Hello {user[0].name?.split(' ')[0]}</DropdownMenuLabel>
+            <DropdownMenuLabel>Hello {user.name?.split(' ')[0]}</DropdownMenuLabel>
+            <DropdownMenuLabel>
+              {
+                user.plan === 'pro'
+                  ? 'Pro Plan'
+                  : <Link href={process.env.PRO_PLAN_URL!} className="hover:underline">Upgrade to Pro</Link>
+              }
+            </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <form action={signOut}>
               <Button type="submit" variant={'link'} className="w-full justify-start p-2 text-black">Log out</Button>

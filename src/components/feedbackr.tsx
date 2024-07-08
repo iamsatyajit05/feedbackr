@@ -84,7 +84,7 @@ const FeedbackComponent: React.FC<FeedbackComponentProps> = ({ children, project
         setSubmitSuccess(false);
 
         try {
-            const response = await fetch('/api/feedback', {
+            const response = await fetch('https://feedbackr-app.vercel.app/api/feedback', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

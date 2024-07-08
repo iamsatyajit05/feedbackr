@@ -74,3 +74,24 @@ export const feedbackTable = pgTable('feedback', {
 export const feedbackCounterTable = pgTable('feedback_counter', {
   count: integer('coutner').notNull(),
 });
+
+export const orderTable = pgTable('order', {
+  id: text('id').primaryKey(),
+  userEmail: text('user_email').notNull(),
+  status: text('status').notNull(),
+  total: integer('total').notNull(),
+  currency: text('currency').notNull(),
+  createdAt: timestamp('created_at', {
+    withTimezone: true,
+    mode: 'date',
+  })
+    .defaultNow()
+    .notNull(),
+  updatedAt: timestamp('updated_at', {
+    withTimezone: true,
+    mode: 'date',
+  })
+    .defaultNow()
+    .notNull(),
+  orderId: text('order_id').notNull(),
+});
