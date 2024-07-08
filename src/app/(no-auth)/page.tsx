@@ -10,9 +10,9 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <Demo />
       <Comparison />
       <ThreeSteps />
-      <Demo />
       <Pricing />
       <FAQ />
       <LastCTA />

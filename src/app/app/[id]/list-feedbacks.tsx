@@ -71,7 +71,7 @@ export default function ListFeedbacks({ feedbacks }: any) {
                   {f.userId}
                 </p>
                 {
-                  f.userId !== 'null' && (
+                  f.userId !== 'Anonymous' && (
                     <Button size={'sm'} className="absolute bottom-2 right-2 w-fit invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100" asChild>
                       <Link href={`https://mail.google.com/mail/?view=cm&to=${f.userId}&su=RE:%20${encode(f.content)}`} target="_blank">
                         Reply to feedback

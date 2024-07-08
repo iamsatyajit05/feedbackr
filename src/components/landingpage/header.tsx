@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { MenuIcon } from 'lucide-react';
 import {
@@ -13,11 +12,11 @@ import DashboardLogin from '../auth/dashboard-login';
 const navItems: MenuLink[] = [
     {
         title: 'Pricing',
-        link: '#pricing',
+        link: '/#pricing',
     },
     {
         title: 'FAQ',
-        link: '#faq',
+        link: '/#faq',
     },
     {
         title: 'Examples',

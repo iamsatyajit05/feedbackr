@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${gabarito.variable} ${inter.variable} font-inter !scroll-smooth`}>
+    <html lang='en' className="scroll-smooth">
+      <body className={`${gabarito.variable} ${inter.variable} font-inter`}>
         {children}
         <Toaster />
       </body>
