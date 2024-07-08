@@ -134,10 +134,10 @@ const Feedbackr: React.FC<FeedbackrProps> = ({ children, projectId, userId }) =>
 
             <Dialog isOpen={isOpen} onClose={handleClose}>
                 <div className="p-6">
-                    <h2 className="text-lg font-semibold mb-2 text-left">Give us your feedback</h2>
+                    <h2 className="text-lg text-black font-semibold mb-2 text-left">Give us your feedback</h2>
                     <p className="text-sm text-gray-600 mb-4 text-left">We'd love to hear your thoughts on how we can improve.</p>
                     <form onSubmit={handleSubmit} className="space-y-2">
-                        <div className='accent-black flex justify-between gap-2'>
+                        <div className='accent-black text-black flex justify-between gap-2'>
                             {['issue', 'suggestion', 'other'].map((category) => (
                                 <div key={category} className='flex items-center gap-2'>
                                     <input
@@ -283,10 +283,10 @@ const Feedbackr = ({ children, projectId, userId }) => {
 
             <Dialog isOpen={isOpen} onClose={handleClose}>
                 <div className="p-6">
-                    <h2 className="text-lg font-semibold mb-2 text-left">Give us your feedback</h2>
+                    <h2 className="text-lg text-black font-semibold mb-2 text-left">Give us your feedback</h2>
                     <p className="text-sm text-gray-600 mb-4 text-left">We'd love to hear your thoughts on how we can improve.</p>
                     <form onSubmit={handleSubmit} className="space-y-2">
-                        <div className='accent-black flex justify-between gap-2'>
+                        <div className='accent-black text-black flex justify-between gap-2'>
                             {['issue', 'suggestion', 'other'].map((category) => (
                                 <div key={category} className='flex items-center gap-2'>
                                     <input

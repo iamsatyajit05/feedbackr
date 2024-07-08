@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from 'next';
 import { Inter, Gabarito } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
