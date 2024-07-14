@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className={`${gabarito.variable} ${inter.variable} font-inter`}>
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
