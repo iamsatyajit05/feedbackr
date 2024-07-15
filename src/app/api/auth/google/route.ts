@@ -163,7 +163,7 @@ export async function GET(req: NextRequest) {
     });
 
     if (newUser) {
-      await createProject('Blue Ocean');
+      await createProject('Blue Ocean', true);
     }
 
     return NextResponse.redirect(new URL('/app', process.env.NEXT_PUBLIC_BASE_URL), {

@@ -7,7 +7,7 @@ import { Project } from '@/lib/interface';
 import { generateRandomId } from '@/lib/utils';
 import { getUser } from './auth';
 
-export async function createProject(projectName: string) {
+export async function createProject(projectName: string, newUser: boolean = false) {
   try {
     const { user } = await validateRequest();
 
@@ -20,7 +20,7 @@ export async function createProject(projectName: string) {
 
     const userData = await getUser();
 
-    if (userData.data && userData.data?.plan === 'free') {
+    if (!newUser || (userData.data && userData.data?.plan === 'free')) {
       throw new Error('Upgrade to pro to create more projects');
     }
 
